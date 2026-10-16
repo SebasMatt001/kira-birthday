@@ -1,0 +1,2138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#21152f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<title>For a Cutie Pie ✦ Happy Birthday!</title>
+
+<style>
+:root {
+  --bg: #120a1a;
+  --gold: #ffd24a;
+  --display: "Friz Quadrata", "Cinzel", Georgia, serif;
+  --parchment: #f1e0b8;
+  --bg-light: #241831;
+  --panel: rgba(43, 29, 57, 0.88);
+  --panel-light: rgba(58, 39, 75, 0.85);
+  --purple: #c69aff;
+  --purple-light: #e5cfff;
+  --orange: #ff8a2b;
+  --pink: #ff8fbd;
+  --text: #fff4ff;
+  --muted: #c8b7d4;
+  --border: rgba(226, 190, 255, 0.2);
+  --radius: 22px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 10% 5%, rgba(143, 84, 197, 0.22), transparent 35%),
+    radial-gradient(ellipse at 90% 25%, rgba(255, 153, 89, 0.12), transparent 32%),
+    radial-gradient(ellipse at 50% 90%, rgba(180, 113, 255, 0.12), transparent 35%),
+    var(--bg);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--purple);
+  color: var(--bg);
+}
+
+.stars {
+  position: fixed;
+  top: -240px;
+  left: -340px;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.6;
+  will-change: transform;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, white 45%, transparent 55%),
+    radial-gradient(1px 1px at 90px 100px, white 45%, transparent 55%),
+    radial-gradient(2px 2px at 160px 180px, #e6c9ff 45%, transparent 55%),
+    radial-gradient(1px 1px at 220px 60px, white 45%, transparent 55%),
+    radial-gradient(2px 2px at 300px 140px, #ffcf9d 45%, transparent 55%);
+  background-size: 340px 240px;
+  animation: star-drift 55s linear infinite;
+}
+
+@keyframes star-drift {
+  from { transform: translate(0, 0); }
+  to { transform: translate(340px, 240px); }
+}
+
+.floating-heart {
+  position: fixed;
+  right: clamp(12px, 4vw, 55px);
+  bottom: 24px;
+  width: 90px;
+  height: 90px;
+  z-index: 8;
+  pointer-events: none;
+  animation: heart-float 4s ease-in-out infinite;
+}
+
+.floating-heart img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@keyframes heart-float {
+  0%, 100% {
+    transform: translateY(0) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(6deg);
+  }
+}
+
+.container {
+  width: min(1050px, calc(100% - 36px));
+  margin: 0 auto;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(23, 16, 31, 0.97);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 65px;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 0.96rem;
+  color: var(--purple-light);
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font: 600 0.8rem Arial, sans-serif;
+  text-decoration: none;
+  padding: 7px 10px;
+  border-radius: 999px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+  background: rgba(198, 154, 255, 0.16);
+}
+
+.nav-links a.locked {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.nav-links a.locked:hover {
+  color: var(--muted);
+  background: transparent;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 92px 0 45px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--orange);
+  background: rgba(255, 179, 102, 0.08);
+  font: 700 0.75rem Arial, sans-serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 22px auto 12px;
+  max-width: 850px;
+  font-size: clamp(2.6rem, 7vw, 5.4rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+
+.gradient-text {
+  background: linear-gradient(100deg, var(--orange), var(--pink), var(--purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-description {
+  max-width: 630px;
+  margin: 18px auto 26px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 11px 20px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  font: 700 0.9rem Arial, sans-serif;
+  transition: transform 0.2s, filter 0.2s, background 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.button-primary {
+  color: #25142e;
+  background: linear-gradient(100deg, var(--orange), var(--pink), var(--purple));
+  border: none;
+}
+
+.button-secondary {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.hero-decoration {
+  position: absolute;
+  top: 85px;
+  left: max(0px, calc(50% - 440px));
+  font-size: 2rem;
+  opacity: 0.75;
+  animation: slow-spin 12s linear infinite;
+}
+
+.hero-decoration-right {
+  position: absolute;
+  right: max(0px, calc(50% - 440px));
+  top: 160px;
+  font-size: 1.7rem;
+  animation: gentle-bob 3.5s ease-in-out infinite;
+}
+
+@keyframes slow-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes gentle-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Florida-to-California distance */
+
+.distance-card {
+  max-width: 760px;
+  margin: 20px auto 65px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 179, 102, 0.07),
+    rgba(198, 154, 255, 0.1)
+  );
+  box-shadow: 0 20px 65px rgba(0, 0, 0, 0.12);
+}
+
+.distance-heading {
+  text-align: center;
+  color: var(--muted);
+  font: 700 0.72rem Arial, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.distance-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.distance-end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 78px;
+  gap: 2px;
+}
+
+.distance-icon {
+  font-size: 1.65rem;
+  margin-bottom: 5px;
+}
+
+.distance-end strong {
+  font-size: 0.95rem;
+}
+
+.distance-end small {
+  color: var(--muted);
+  font: 0.78rem Arial, sans-serif;
+}
+
+.distance-middle {
+  flex: 1;
+  min-width: 0;
+}
+
+.distance-track {
+  height: 2px;
+  position: relative;
+  margin: 13px 0 20px;
+  background: linear-gradient(90deg, var(--orange), var(--pink), var(--purple));
+}
+
+.distance-heart {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 9px;
+  color: var(--pink);
+  background: var(--bg-light);
+  font-size: 1.35rem;
+  animation: heart-pulse 1.7s ease-in-out infinite;
+}
+
+@keyframes heart-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.25); }
+}
+
+.distance-number {
+  display: block;
+  color: var(--purple-light);
+  font: 800 clamp(1rem, 3vw, 1.55rem) Arial, sans-serif;
+  white-space: nowrap;
+}
+
+.distance-caption {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Main sections */
+
+.section {
+  padding: 45px 0;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 28px;
+}
+
+.section-kicker {
+  color: var(--orange);
+  font: 700 0.72rem Arial, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin: 8px 0 10px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.section-heading p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.quest-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.quest-card,
+.content-card,
+.scrapbook-card,
+.letter-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.1);
+}
+
+.quest-card {
+  padding: 24px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.quest-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(198, 154, 255, 0.48);
+}
+
+.quest-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 13px;
+  color: var(--purple-light);
+  background: rgba(198, 154, 255, 0.13);
+  font: 800 0.85rem Arial, sans-serif;
+}
+
+.quest-card h3 {
+  margin: 15px 0 8px;
+  font-size: 1.35rem;
+}
+
+.quest-card p {
+  margin: 0 0 17px;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.quest-card label {
+  display: block;
+  margin: 12px 0 6px;
+  color: var(--purple-light);
+  font: 700 0.8rem Arial, sans-serif;
+}
+
+.quest-card select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  color: var(--text);
+  background: #21162e;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  font: 0.9rem Arial, sans-serif;
+}
+
+.quest-card select:focus {
+  outline: 2px solid var(--purple);
+  outline-offset: 2px;
+}
+
+.quest-card option {
+  color: var(--text);
+  background: #21162e;
+}
+
+.quest-card .button {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.quest-feedback {
+  min-height: 25px;
+  margin-top: 9px;
+  font: 0.82rem Arial, sans-serif;
+  color: var(--muted);
+}
+
+.quest-feedback.success {
+  color: #b9f3ce;
+}
+
+.quest-feedback.error {
+  color: #ffb4c8;
+}
+
+.progress-card {
+  margin: 22px 0 0;
+  padding: 18px 22px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font: 0.8rem Arial, sans-serif;
+}
+
+.progress-track {
+  height: 7px;
+  overflow: hidden;
+  margin-top: 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--orange), var(--pink), var(--purple));
+  transition: width 0.5s ease;
+}
+
+.lock-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 22px;
+}
+
+/* Unlockable content */
+
+.unlocked-section {
+  display: none;
+  padding: 35px 0 45px;
+  animation: reveal 0.65s ease both;
+}
+
+.unlocked-section.visible {
+  display: block;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-card {
+  padding: clamp(22px, 5vw, 42px);
+}
+
+.content-card h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.content-card p {
+  color: var(--muted);
+}
+
+.content-card .highlight {
+  color: var(--purple-light);
+}
+
+.story-quote {
+  margin: 25px 0;
+  padding: 17px 20px;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 12px 12px 0;
+  background: rgba(255, 179, 102, 0.07);
+  color: var(--text);
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.mini-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.mini-tag {
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--purple-light);
+  background: rgba(198, 154, 255, 0.08);
+  font: 0.8rem Arial, sans-serif;
+}
+
+.sticker-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+}
+
+.sticker {
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--panel-light);
+  font-size: 1.3rem;
+}
+
+.sticker img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+/* Singing section */
+
+.music-note {
+  font-size: 1.6rem;
+  display: inline-block;
+  animation: note-bob 2s ease-in-out infinite;
+}
+
+.music-note:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.music-note:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes note-bob {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-9px) rotate(5deg); }
+}
+
+.music-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(198, 154, 255, 0.07);
+}
+
+.music-panel .instrument {
+  font-size: 2.2rem;
+}
+
+/* Spotify playlist */
+
+.spotify-embed {
+  margin: 25px 0 10px;
+}
+
+.spotify-embed iframe {
+  display: block;
+  border: 0;
+  border-radius: 16px;
+}
+
+.spotify-note {
+  margin: 10px 0 0;
+  text-align: center;
+  font: 0.8rem Arial, sans-serif;
+}
+
+.spotify-link {
+  display: flex;
+  width: fit-content;
+  margin: 14px auto 0;
+}
+
+/* Back to quests link */
+
+.back-to-quests {
+  margin-top: 26px;
+  text-align: center;
+}
+
+/* Scrapbook */
+
+.scrapbook-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 25px;
+}
+
+.scrapbook-card {
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.photo-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 179, 102, 0.17), transparent 50%),
+    linear-gradient(135deg, #352443, #21162e);
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-placeholder {
+  padding: 12px;
+  text-align: center;
+  color: var(--muted);
+  font: 0.8rem Arial, sans-serif;
+}
+
+.photo-placeholder span {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 1.8rem;
+}
+
+.photo-caption {
+  padding: 12px 13px 15px;
+}
+
+.photo-caption strong {
+  display: block;
+  color: var(--purple-light);
+  font-size: 0.92rem;
+}
+
+.photo-caption small {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font: 0.76rem Arial, sans-serif;
+}
+
+.cats-heading {
+  margin: 38px 0 8px;
+  text-align: center;
+  font-size: 1.65rem;
+  font-weight: 500;
+}
+
+.cats-description {
+  margin: 0 auto 20px;
+  text-align: center;
+  color: var(--muted);
+  max-width: 580px;
+}
+
+/* Birthday letter */
+
+.letter-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(24px, 6vw, 52px);
+  background:
+    radial-gradient(ellipse at top right, rgba(198, 154, 255, 0.12), transparent 45%),
+    radial-gradient(ellipse at bottom left, rgba(255, 179, 102, 0.09), transparent 40%),
+    var(--panel);
+}
+
+.letter-card::after {
+  content: "♥";
+  position: absolute;
+  right: -5px;
+  top: -35px;
+  color: rgba(198, 154, 255, 0.07);
+  font-size: 13rem;
+  pointer-events: none;
+}
+
+.letter-content {
+  position: relative;
+  z-index: 1;
+}
+
+.letter-card h2 {
+  margin: 0 0 22px;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+.letter-card p {
+  max-width: 710px;
+  color: #e0d3e8;
+}
+
+.letter-signature {
+  margin-top: 30px;
+  color: var(--orange);
+  font-size: 1.35rem;
+  font-style: italic;
+}
+
+.final-heart {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--pink);
+  font-size: 2rem;
+  animation: heart-pulse 1.7s ease-in-out infinite;
+}
+
+footer {
+  padding: 40px 0 55px;
+  text-align: center;
+  color: var(--muted);
+  font: 0.8rem Arial, sans-serif;
+}
+
+footer .footer-heart {
+  color: var(--pink);
+}
+
+/* Confetti */
+
+.confetti-piece {
+  position: fixed;
+  top: -20px;
+  z-index: 100;
+  pointer-events: none;
+  animation: confetti-fall var(--fall-duration, 3s) ease-in forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding-top: 68px;
+  }
+
+  .hero-decoration {
+    top: 25px;
+    left: 10px;
+    font-size: 1.4rem;
+  }
+
+  .hero-decoration-right {
+    right: 12px;
+    top: 65px;
+    font-size: 1.3rem;
+  }
+
+  .nav {
+    padding: 10px 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .nav {
+    align-items: stretch;
+  }
+
+  .nav-links {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 5px 8px;
+  }
+
+  .quest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scrapbook-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .distance-card {
+    padding: 20px 13px;
+  }
+
+  .distance-line {
+    gap: 5px;
+  }
+
+  .distance-end {
+    min-width: 57px;
+  }
+
+  .distance-end strong {
+    font-size: 0.8rem;
+  }
+
+  .distance-end small {
+    font-size: 0.7rem;
+  }
+
+  .distance-icon {
+    font-size: 1.3rem;
+  }
+
+  .distance-caption {
+    font-size: 0.72rem;
+  }
+
+  .floating-heart {
+    width: 65px;
+    height: 65px;
+    right: 12px;
+    bottom: 12px;
+  }
+}
+
+@media (max-width: 390px) {
+  .scrapbook-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .distance-number {
+    font-size: 0.9rem;
+  }
+
+  .distance-end {
+    min-width: 48px;
+  }
+
+  .distance-caption {
+    font-size: 0.65rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---- Cozy goth + WoW quest givers ---- */
+h1, h2, h3, .brand { font-family: var(--display); }
+body { font-family: "Crimson Text", Georgia, serif; font-size: 1.12rem; }
+.hero h1 { letter-spacing: 0; font-size: clamp(2.2rem, 6vw, 4.4rem); }
+.hero-decoration { animation: none; }
+.topbar::after { content: ""; display: block; height: 5px; opacity: 0.5;
+  background: repeating-linear-gradient(90deg, #120a1a 0 14px, var(--parchment) 14px 28px); }
+
+.npc-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 10px; }
+.npc { position: relative; padding: 52px 0 0; border: 0; background: none; color: inherit; cursor: pointer; text-align: center; }
+.npc-mark { position: absolute; top: 0; left: 50%; transform: translateX(-50%); font: 900 2.8rem var(--display);
+  line-height: 1; color: var(--gold); text-shadow: 0 0 16px rgba(255, 210, 74, 0.85), 0 3px 0 #7a5200;
+  animation: mark-bob 1.6s ease-in-out infinite; }
+@keyframes mark-bob { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -7px); } }
+.npc.locked .npc-mark { color: #9a97a6; text-shadow: 0 3px 0 #3a3745; animation: none; }
+.npc.done .npc-mark { color: #b9f3ce; text-shadow: none; animation: none; }
+.npc-photo { position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 3 / 4;
+  overflow: hidden; border: 2px solid rgba(255, 210, 74, 0.6); border-radius: 14px; font-size: 2.6rem;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 138, 43, 0.25), transparent 55%), linear-gradient(135deg, #3a2250, #1d1128);
+  transition: transform 0.2s, border-color 0.2s; }
+.npc-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.npc:hover .npc-photo, .npc.active .npc-photo { transform: translateY(-3px); border-color: var(--orange); }
+.npc.locked .npc-photo { filter: grayscale(0.7) brightness(0.8); }
+.npc:focus-visible { outline: 2px solid var(--purple); outline-offset: 4px; border-radius: 14px; }
+.npc-mark svg { display: block; height: 2.9rem; width: auto; fill: currentColor; stroke: #5a3b00; stroke-width: 1.6; stroke-linejoin: round;
+  filter: drop-shadow(0 0 8px rgba(255, 210, 74, 0.8)); }
+.npc.locked .npc-mark svg { stroke: #3a3745; filter: none; }
+.npc-name { display: block; margin-top: 8px; font: 600 0.88rem var(--display); color: var(--gold); }
+
+.quest-grid { display: block; margin-top: 20px; }
+.quest-card { display: none; max-width: 620px; margin: 0 auto; color: #3b2416; border: 3px double #8a6a3a;
+  background: linear-gradient(160deg, #f6e8c4, #e3cb98); box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35); }
+.quest-card.open { display: block; animation: reveal 0.4s ease both; }
+.quest-card:hover { transform: none; border-color: #8a6a3a; }
+.quest-number { display: none; }
+.quest-card h3 { color: #3a1e0f; }
+.quest-card p { color: #5a4230; font-size: 1.02rem; }
+.quest-card label { color: #5b2a82; font-size: 0.85rem; }
+.quest-card .quest-feedback { color: #5a4230; }
+.quest-card .quest-feedback.success { color: #1f6b3a; }
+.quest-card .quest-feedback.error { color: #a3213f; }
+
+.quest-banner { position: fixed; top: 22%; left: 50%; z-index: 120; pointer-events: none; text-align: center;
+  font: 900 clamp(1.8rem, 6vw, 3.2rem) var(--display); color: var(--gold);
+  text-shadow: 0 0 22px rgba(255, 210, 74, 0.7), 0 3px 0 #5a3b00; animation: banner 2.6s ease forwards; }
+@keyframes banner { 0% { opacity: 0; transform: translate(-50%, 12px) scale(0.9); }
+  15% { opacity: 1; transform: translate(-50%, 0) scale(1); } 80% { opacity: 1; } 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .quest-banner { animation: none; opacity: 1; transform: translateX(-50%); } }
+
+.letter-card { border: 3px double var(--orange); box-shadow: 0 0 60px rgba(255, 138, 43, 0.18); }
+.letter-card p { font-size: 1.18rem; }
+
+@media (max-width: 700px) { .npc-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 14px; } }
+
+/* ---- Friz Quadrata: put the font file in a fonts/ folder next to this page ---- */
+@font-face {
+  font-family: "Friz Quadrata";
+  src: url("fonts/FrizQuadrata.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Friz Quadrata";
+  src: url("fonts/FrizQuadrata-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ---- Quest dialogs as rolled scrolls ---- */
+.quest-card {
+  position: relative;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 44px clamp(22px, 5vw, 40px);
+  border: 0;
+  border-radius: 4px;
+  background:
+    repeating-linear-gradient(0deg, rgba(120, 75, 25, 0.04) 0 2px, transparent 2px 5px),
+    radial-gradient(ellipse at center, #f8ebc9 0%, #ecd8a6 62%, #d2ae72 100%);
+  box-shadow: inset 0 0 55px rgba(110, 60, 15, 0.5), 0 18px 40px rgba(0, 0, 0, 0.4);
+}
+
+.quest-card::before,
+.quest-card::after {
+  content: "";
+  position: absolute;
+  left: -12px;
+  right: -12px;
+  height: 32px;
+  border-radius: 16px;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 14px 50%, #4a2c12 0 3px, #b98a4a 4px 8px, transparent 9px),
+    radial-gradient(circle at calc(100% - 14px) 50%, #4a2c12 0 3px, #b98a4a 4px 8px, transparent 9px),
+    linear-gradient(180deg, #5e3a18, #c79a55 24%, #f7e5b6 50%, #d1a660 74%, #5e3a18);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.quest-card::before { top: -16px; }
+.quest-card::after { bottom: -16px; }
+
+
+/* ---- Real WoW parchment as the quest dialog background ---- */
+.quest-card {
+  padding: 10px 12px;
+  border: 40px solid transparent;
+  border-image: url("photos/quest-parchment.webp") 70 fill / 40px stretch;
+  background-color: #dfc590;
+  box-shadow: none;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.4);
+}
+
+.quest-card::before,
+.quest-card::after { display: none; }
+
+/* ---- WoW-style quest accept window and quest log ---- */
+.wow-overlay { position: fixed; inset: 0; z-index: 110; display: flex; align-items: center; justify-content: center;
+  padding: 16px; background: rgba(5, 2, 10, 0.65); }
+.wow-overlay[hidden], .wow-window[hidden], .log-fab[hidden] { display: none; }
+.wow-window { width: min(560px, 100%); max-height: calc(100vh - 32px); display: flex; flex-direction: column;
+  border: 3px solid #55555a; border-radius: 6px; background: linear-gradient(#232326, #121214);
+  box-shadow: 0 0 0 2px #0b0b0c, 0 24px 60px rgba(0, 0, 0, 0.7); }
+.wow-titlebar { display: flex; align-items: center; justify-content: space-between; padding: 8px 10px 8px 16px;
+  color: var(--gold); font: 700 1rem var(--display); }
+.wow-close { width: 26px; height: 26px; border: 2px solid #55555a; border-radius: 4px; background: #4a1512;
+  color: var(--gold); font: 900 1.1rem Arial, sans-serif; line-height: 1; cursor: pointer; }
+.wow-paper { flex: 1; min-height: 260px; overflow-y: auto; margin: 0 10px; padding: 22px 24px; border: 2px solid #0b0b0c;
+  color: #3b2416; background: url("photos/quest-parchment.webp") center / cover, #dfc590; }
+.wow-paper h3 { margin: 0 0 10px; font-size: 1.4rem; color: #2a1608; }
+.wow-paper h4 { margin: 18px 0 6px; font: 700 1.05rem var(--display); color: #2a1608; }
+.wow-paper p { margin: 0 0 8px; color: #4a3322; font-size: 1.05rem; }
+.wow-footer { display: flex; justify-content: space-between; padding: 10px; }
+.wow-btn { min-width: 110px; padding: 7px 18px; border: 2px solid #0b0b0c; border-radius: 4px; color: var(--gold);
+  cursor: pointer; font: 700 1rem var(--display); background: linear-gradient(#8c1b14, #4b0b08); box-shadow: inset 0 0 0 1px #b8433a; }
+.wow-btn:hover { filter: brightness(1.2); }
+.wow-loglist { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 10px 8px; }
+.wow-logitem { padding: 5px 10px; border: 1px solid #55555a; border-radius: 4px; background: #1a1a1c; color: #cfc7b8;
+  font: 600 0.8rem var(--display); cursor: pointer; }
+.wow-logitem.active { color: var(--gold); border-color: var(--gold); }
+.log-fab { position: fixed; left: 14px; bottom: 14px; z-index: 30; padding: 9px 14px; border: 2px solid #55555a;
+  border-radius: 8px; background: #1a1a1c; color: var(--gold); font: 700 0.85rem var(--display); cursor: pointer; }
+.wow-paper .quest-card { max-width: none; margin: 0; padding: 4px 6px; border: 0; border-image: none; background: none; filter: none; }
+.npc.accepted .npc-mark { color: #9a97a6; text-shadow: 0 3px 0 #3a3745; font: 900 2.8rem var(--display); animation: none; }
+
+
+/* ---- Quest reward coupons (WoW item tooltip style) ---- */
+.reward-label { margin-top: 28px; text-align: center; color: var(--gold); font: 700 0.95rem var(--display); }
+.item { display: flex; gap: 14px; max-width: 480px; margin: 10px auto 0; padding: 14px; text-align: left;
+  border: 2px solid #5a5a63; border-radius: 6px; background: rgba(8, 8, 16, 0.92); box-shadow: inset 0 0 0 1px #000; }
+.item-icon { display: flex; flex: 0 0 56px; align-items: center; justify-content: center; height: 56px;
+  font-size: 1.9rem; border: 2px solid #a335ee; border-radius: 6px; background: #1a1024; }
+.item-body { min-width: 0; font-family: var(--display); }
+.item-name { color: #b455f2; font-size: 1.1rem; font-weight: 700; line-height: 1.3; }
+.item-line { color: #fff; font-size: 0.85rem; }
+.item-use { margin-top: 4px; color: #1eff00; font-size: 0.92rem; line-height: 1.45; }
+.item-flavor { margin-top: 6px; color: var(--gold); font-size: 0.88rem; font-style: italic; font-weight: 700; }
+.coupon-redeem { min-height: 36px; margin-top: 10px; padding: 6px 16px; font-size: 0.8rem; }
+</style>
+</head>
+
+<body>
+<div class="stars" aria-hidden="true"></div>
+
+<!-- Your custom floating heart.
+     Put your image at photos/my-heart.png -->
+<div class="floating-heart" aria-hidden="true">
+  <img
+    src="photos/my-heart.png"
+    alt=""
+    onerror="this.parentElement.style.display='none';"
+  >
+</div>
+
+<header class="topbar">
+  <div class="container nav">
+    <div class="brand">✦ For a Cutie Pie</div>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#quests">Quests</a>
+      <a href="#story" class="locked" data-nav="story">Our Story 🔒</a>
+      <a href="#listen" class="locked" data-nav="listen">Your Music 🔒</a>
+      <a href="#memories" class="locked" data-nav="memories">Memories 🔒</a>
+      <a href="#letter" class="locked" data-nav="letter">Your Letter 🔒</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+
+  <section class="hero container" id="home">
+    <div class="hero-decoration" aria-hidden="true">✦</div>
+    <div class="hero-decoration-right" aria-hidden="true">🍓</div>
+
+    <div class="eyebrow">✦ For Strawburrycat ✦</div>
+
+    <h1>
+      Happy Birthday,<br>
+      <span class="gradient-text">cutie pie lover girl.</span>
+    </h1>
+
+    <p class="hero-description">
+      I made you a tiny universe of memories, music, and filled it with silly dumb things,
+      and all the love I wish I could give you in person today.
+      Ready to explore it?
+    </p>
+
+    <div class="hero-buttons">
+      <a class="button button-primary" href="#quests">Start your adventure ✨</a>
+      <button class="button button-secondary" type="button" id="confettiButton">
+        Send you some love ♥
+      </button>
+    </div>
+  </section>
+
+  <!-- DISTANCE -->
+
+  <section class="container" aria-label="Our distance">
+    <div class="distance-card">
+      <div class="distance-heading">Two places, one cutie pie</div>
+
+      <div class="distance-line">
+        <div class="distance-end">
+          <span class="distance-icon" aria-hidden="true">☀️</span>
+          <strong>Florida</strong>
+          <small>Honey Buns</small>
+        </div>
+
+        <div class="distance-middle">
+          <div class="distance-track">
+            <span class="distance-heart" aria-hidden="true">♥</span>
+          </div>
+          <strong class="distance-number">2,562.13 miles</strong>
+          <span class="distance-caption">Apart in miles, close at heart.</span>
+        </div>
+
+        <div class="distance-end">
+          <span class="distance-icon" aria-hidden="true">💜</span>
+          <strong>California</strong>
+          <small>Lover pie</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ / QUESTS -->
+
+  <section class="section container" id="quests">
+    <div class="section-heading">
+      <div class="section-kicker">Quest log</div>
+      <h2>Four quests for my honey</h2>
+      <p>
+        Tap a quest giver with a ! over their head. Each completed quest
+        unlocks a piece of this and a reward. No penalties, just our memories and love.
+      </p>
+    </div>
+
+    <div class="npc-row">
+      <button class="npc" type="button" data-quest="story" aria-label="Quest: Where it all began">
+        <span class="npc-mark" aria-hidden="true"><svg viewBox="0 0 24 48" aria-hidden="true"><path d="M6.5 3.5Q12 -0.5 17.5 3.5L14.8 31Q12 33.5 9.2 31Z"/><circle cx="12" cy="41" r="4.8"/></svg></span>
+        <span class="npc-photo"><span>🧙</span><img src="photos/quest-1.jpg" alt="" onerror="this.style.display='none';"></span>
+        <span class="npc-name">Where it all began</span>
+      </button>
+      <button class="npc" type="button" data-quest="listen" aria-label="Quest: My favorite sound">
+        <span class="npc-mark" aria-hidden="true"><svg viewBox="0 0 24 48" aria-hidden="true"><path d="M6.5 3.5Q12 -0.5 17.5 3.5L14.8 31Q12 33.5 9.2 31Z"/><circle cx="12" cy="41" r="4.8"/></svg></span>
+        <span class="npc-photo"><span>🎸</span><img src="photos/quest-2.jpg" alt="" onerror="this.style.display='none';"></span>
+        <span class="npc-name">My favorite sound</span>
+      </button>
+      <button class="npc" type="button" data-quest="memories" aria-label="Quest: Memory lane">
+        <span class="npc-mark" aria-hidden="true"><svg viewBox="0 0 24 48" aria-hidden="true"><path d="M6.5 3.5Q12 -0.5 17.5 3.5L14.8 31Q12 33.5 9.2 31Z"/><circle cx="12" cy="41" r="4.8"/></svg></span>
+        <span class="npc-photo"><span>📜</span><img src="photos/quest-3.jpg" alt="" onerror="this.style.display='none';"></span>
+        <span class="npc-name">Memory lane</span>
+      </button>
+      <button class="npc locked" type="button" data-quest="letter" aria-label="Quest: Your final reward">
+        <span class="npc-mark" aria-hidden="true"><svg viewBox="0 0 24 48" aria-hidden="true"><path d="M6.5 3.5Q12 -0.5 17.5 3.5L14.8 31Q12 33.5 9.2 31Z"/><circle cx="12" cy="41" r="4.8"/></svg></span>
+        <span class="npc-photo"><span>💌</span><img src="photos/quest-4.jpg" alt="" onerror="this.style.display='none';"></span>
+        <span class="npc-name">Your final reward</span>
+      </button>
+    </div>
+
+    <div class="quest-grid">
+
+      <article class="quest-card">
+        <span class="quest-number">01</span>
+        <h3>Where it all began</h3>
+        <p>
+          Every great adventure has an origin story.
+          Let's see if you remember ours.
+        </p>
+        <label for="answer-story">Where did we first meet?</label>
+        <select id="answer-story">
+          <option value="">Choose your answer...</option>
+          <option value="wow">In Azeroth like smelly nerds</option>
+          <option value="coffee">in the rift</option>
+          <option value="school">in the yucky outside</option>
+          <option value="concert">A dating site</option>
+        </select>
+        <button class="button button-primary" type="button"
+          onclick="checkAnswer('story', 'wow')">
+          Complete Quest
+        </button>
+        <div class="quest-feedback" id="feedback-story" aria-live="polite"></div>
+      </article>
+
+      <article class="quest-card">
+        <span class="quest-number">02</span>
+        <h3>My favorite sound</h3>
+        <p>
+          Here's a very important question.
+          One of these makes my heart ridiculously happy.
+        </p>
+        <label for="answer-listen">What do I love listening to most?</label>
+        <select id="answer-listen">
+          <option value="">Choose your answer...</option>
+          <option value="traffic">Iggy moewing outside the door</option>
+          <option value="singing">You singing and playing music</option>
+          <option value="podcasts">Random tiktok brainrot</option>
+          <option value="game">Game soundtracks</option>
+        </select>
+        <button class="button button-primary" type="button"
+          onclick="checkAnswer('listen', 'singing')">
+          Complete Quest
+        </button>
+        <div class="quest-feedback" id="feedback-listen" aria-live="polite"></div>
+      </article>
+
+      <article class="quest-card">
+        <span class="quest-number">03</span>
+        <h3>Memory lane</h3>
+        <p>
+          Our adventures, our favorite little moments,
+          and some tiny gatitos.
+        </p>
+        <label for="answer-memories">What do we love doing together the most?</label>
+        <select id="answer-memories">
+          <option value="">Choose your answer...</option>
+          <option value="games">Playing games together</option>
+          <option value="taxes">exercising</option>
+          <option value="sleep">doing homework?</option>
+          <option value="none">Absolutely nothing</option>
+        </select>
+        <button class="button button-primary" type="button"
+          onclick="checkAnswer('memories', 'games')">
+          Complete Quest
+        </button>
+        <div class="quest-feedback" id="feedback-memories" aria-live="polite"></div>
+      </article>
+
+      <article class="quest-card">
+        <span class="quest-number">04</span>
+        <h3>Your final reward</h3>
+        <p>
+          The last quest I made easy, but it opens only after you complete
+          the first three. It's about the most important person in
+          my life.
+        </p>
+        <label for="answer-letter">Who deserves all the love today?</label>
+        <select id="answer-letter">
+          <option value="">Choose your answer...</option>
+          <option value="me">Me, a cutie pie lover girl</option>
+          <option value="you">Sebastian</option>
+          <option value="cats">Lucifer or iggy?</option>
+          <option value="wow">Banana Milk</option>
+        </select>
+        <button class="button button-primary" type="button"
+          onclick="checkAnswer('letter', 'me')">
+          Complete Quest
+        </button>
+        <div class="quest-feedback" id="feedback-letter" aria-live="polite"></div>
+      </article>
+
+    </div>
+
+    <div class="progress-card">
+      <div class="progress-label">
+        <span>Your adventure progress</span>
+        <span id="progressText">0 of 4 unlocked</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <p class="lock-note" id="lockNote">
+      Tap a quest giver to begin. 💜
+    </p>
+  </section>
+
+  <!-- UNLOCKED: OUR STORY -->
+
+  <section class="unlocked-section container" id="story">
+    <div class="content-card">
+      <div class="section-kicker">Chapter one · The beginning</div>
+      <h2>Somehow, my raid leader became my favorite person?</h2>
+
+      <p>
+        Of all the ways we could have possibly met, we started started in
+        <span class="highlight">World of Warcraft</span>.
+        You were my raid leader, and neither of us could have known
+        that a game would introduce me to someone who would become
+        so important to me.
+      </p>
+
+      <p>
+        Somewhere between you asking me if I will make it to 
+        raids, playing games, conversations, 
+        and all the little moments in between, you became much more than someone
+        I played games with. You became someone I look forward to
+        talking to, laughing with, teasing, ragebaiting and spending all of my time with.
+      </p>
+
+
+      <p>
+        Now we have our own little collection of adventures:
+        World of Warcraft, League of Legends, TFT, Valheim, and
+        whatever other game we decide to get ourselves into next.
+        Even when we're on opposite sides of the country, those
+        moments make me feel like we are side by side and nothing in 
+        the world can bother me.
+      </p>
+
+      <p>
+        Valheim is where we really started talking and hanging out.
+        We both gave our characters the last name Erikson without
+        knowing the other one had; it was just meant to be hehe
+      </p>
+
+      <p>
+        Florida and California might be far apart, but I'm really
+        glad that a certain raid leader makes all those miles worth it.
+      </p>
+
+      <div class="reward-label">Quest reward</div>
+      <div class="item">
+        <div class="item-icon" aria-hidden="true">🧋</div>
+        <div class="item-body">
+          <div class="item-name">Coupon: One Sweet Treat</div>
+          <div class="item-line">Binds when picked up</div>
+          <div class="item-use">Use: Redeem for one milk tea or dessert of your choice, on me. Delivery counts.</div>
+          <div class="item-flavor">"Best enjoyed with a gatito on your lap."</div>
+          <button class="button button-secondary coupon-redeem" type="button">Redeem</button>
+        </div>
+      </div>
+
+      <div class="back-to-quests">
+        <a class="button button-secondary" href="#quests">Back to the quests ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNLOCKED: MUSIC -->
+
+  <section class="unlocked-section container" id="listen">
+    <div class="content-card">
+      <div class="section-kicker">Chapter two · Your music</div>
+      <h2>My favorite sound in the world is you.</h2>
+
+      <p>
+        I hope you know how much I really love hearing you sing.
+        Whenever you sing or play guitar or the uke, there's
+        something about it that makes me want to stop whatever I'm
+        doing and just sit and listen to mi cielo.
+      </p>
+
+      <p>
+        It's not about needing a perfect performance or a particular
+        song from you. It's that it's <span class="highlight">you</span>.
+        Hearing your voice, listening to you play, and getting to
+        share that little part of your world with you means soo much to me.
+      </p>
+
+      <div class="music-panel">
+        <span class="music-note">♫</span>
+        <span class="instrument" aria-hidden="true">🎸</span>
+        <span class="music-note">♪</span>
+        <span class="instrument" aria-hidden="true">🎶</span>
+        <span class="music-note">♫</span>
+      </div>
+
+      <!-- SPOTIFY PLAYLIST
+           Replace YOUR_PLAYLIST_ID (in both places below) with the ID from
+           your playlist link: open.spotify.com/playlist/<THIS_PART>?si=...
+           The playlist must be set to public. -->
+      <p>
+        I made you a playlist. half of them reminds me of you or of us and the other half is new from me to you.
+        i will translate the spanish one if you want hehehe
+      </p>
+
+      <div class="spotify-embed">
+        <iframe
+          src="https://open.spotify.com/embed/playlist/38euaOSYfWewFi4MRMf7Y8?utm_source=generator&amp;theme=0"
+          width="100%"
+          height="352"
+          frameborder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          title="A playlist for you">
+        </iframe>
+      </div>
+
+      <p class="spotify-note">
+        Log into Spotify in your browser to hear full songs. 💜
+      </p>
+
+      <a class="button button-secondary spotify-link"
+        href="https://open.spotify.com/playlist/38euaOSYfWewFi4MRMf7Y8"
+        target="_blank" rel="noopener noreferrer">
+        Open in Spotify 🎧
+      </a>
+
+
+      <p>
+        I hope you will always sing and play for me. I hope you always have
+        music in your life, and I hope I get to keep being someone
+        who hears it and shares it with you . You have no idea how happy that makes me.
+      </p>
+
+      <p class="highlight">
+        Thank you for sharing your music with me. I love you, and
+        I love hearing you be yourself.
+      </p>
+
+      <div class="reward-label">Quest reward</div>
+      <div class="item">
+        <div class="item-icon" aria-hidden="true">💋</div>
+        <div class="item-body">
+          <div class="item-name">Coupon: 50 Free Kisses</div>
+          <div class="item-line">Binds when picked up</div>
+          <div class="item-use">Use: Redeem for 50 kisses, all at once or spread out. You decide.</div>
+          <div class="item-flavor">"No refunds. No limit on how fast."</div>
+          <button class="button button-secondary coupon-redeem" type="button">Redeem</button>
+        </div>
+      </div>
+
+      <div class="back-to-quests">
+        <a class="button button-secondary" href="#quests">Back to the quests ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNLOCKED: SCRAPBOOK -->
+
+  <section class="unlocked-section container" id="memories">
+    <div class="content-card">
+      <div class="section-kicker">Chapter three · Our little memories</div>
+      <h2>A scrapbook of us.</h2>
+
+      <p>
+        A little space for the screenshots, pictures, funny moments,
+        and memories that make our own little universe feel like ours.
+        Replace these placeholders with pictures you want to keep here.
+      </p>
+
+      <div class="scrapbook-grid">
+
+        <article class="scrapbook-card">
+          <div class="photo-frame">
+            <img src="photos/memory-1.jpg" alt="A favorite memory together"
+              onerror="this.style.display='none';">
+            <div class="photo-placeholder">
+              <span>🌌</span>
+              Our first memory
+            </div>
+          </div>
+          <div class="photo-caption">
+            <strong>Where it began</strong>
+            <small>First trip to Miami</small>
+          </div>
+        </article>
+
+        <article class="scrapbook-card">
+          <div class="photo-frame">
+            <img src="photos/memory-2.jpg" alt="A gaming memory"
+              onerror="this.style.display='none';">
+            <div class="photo-placeholder">
+              <span>⚔️</span>
+              Gaming together
+            </div>
+          </div>
+          <div class="photo-caption">
+            <strong>Our adventures</strong>
+            <small>Romantic getaway?</small>
+          </div>
+        </article>
+
+        <article class="scrapbook-card">
+          <div class="photo-frame">
+            <img src="photos/memory-3.jpg" alt="A favorite shared moment"
+              onerror="this.style.display='none';">
+            <div class="photo-placeholder">
+              <span>💜</span>
+              A favorite moment
+            </div>
+          </div>
+          <div class="photo-caption">
+            <strong>Little things</strong>
+            <small>Will never forget you dancing</small>
+          </div>
+        </article>
+
+        <article class="scrapbook-card">
+          <div class="photo-frame">
+            <img src="photos/memory-4.jpg" alt="A fun memory"
+              onerror="this.style.display='none';">
+            <div class="photo-placeholder">
+              <span>🎮</span>
+              More adventures
+            </div>
+          </div>
+          <div class="photo-caption">
+            <strong>Side quests</strong>
+            <small>Looking at the stars</small>
+          </div>
+        </article>
+
+        <article class="scrapbook-card">
+          <div class="photo-frame">
+            <img src="photos/memory-5.jpg" alt="A happy memory"
+              onerror="this.style.display='none';">
+            <div class="photo-placeholder">
+              <span>🍓</span>
+              A happy little moment
+            </div>
+          </div>
+          <div class="photo-caption">
+            <strong>My favorite person</strong>
+            <small>That would be my honey buns</small>
+          </div>
+        </article>
+
+        <article class="scrapbook-card">
+          <div class="photo-frame">
+            <img src="photos/memory-6.jpg" alt="A memory to keep"
+              onerror="this.style.display='none';">
+            <div class="photo-placeholder">
+              <span>✨</span>
+              To many more
+            </div>
+          </div>
+          <div class="photo-caption">
+            <strong>Our next chapter</strong>
+            <small>More memories to come</small>
+          </div>
+        </article>
+
+      </div>
+
+      <h3 class="cats-heading">And of course… the evil little guys. 🐈‍⬛</h3>
+      <p class="cats-description">
+        I couldnt forget the other two most important men in your life.
+      </p>
+
+      <div class="scrapbook-grid">
+
+        <article class="scrapbook-card">
+          <div class="photo-frame">
+            <img src="photos/black-cat-1.jpg" alt="Lucifer"
+              onerror="this.style.display='none';">
+            <div class="photo-placeholder">
+              <span>🐈‍⬛</span>
+              Lucifer
+            </div>
+          </div>
+          <div class="photo-caption">
+            <strong>Lucifer</strong>
+            <small>Little devil guy likes to sit</small>
+          </div>
+        </article>
+
+        <article class="scrapbook-card">
+          <div class="photo-frame">
+            <img src="photos/black-cat-2.jpg" alt="Iggy"
+              onerror="this.style.display='none';">
+            <div class="photo-placeholder">
+              <span>🐈‍⬛</span>
+              Iggy
+            </div>
+          </div>
+          <div class="photo-caption">
+            <strong>Iggy</strong>
+            <small>Iggy demands you play right now</small>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="reward-label">Quest reward</div>
+      <div class="item">
+        <div class="item-icon" aria-hidden="true">⚔️</div>
+        <div class="item-body">
+          <div class="item-name">Coupon: A Day of PvP</div>
+          <div class="item-line">Binds when picked up</div>
+          <div class="item-use">Use: Redeem for a full day of World of Warcraft PvP together. We stop whenever you want.</div>
+          <div class="item-flavor">"I will not be salty guranteed."</div>
+          <button class="button button-secondary coupon-redeem" type="button">Redeem</button>
+        </div>
+      </div>
+
+      <div class="back-to-quests">
+        <a class="button button-secondary" href="#quests">Back to the quests ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNLOCKED: LETTER -->
+
+  <section class="unlocked-section container" id="letter">
+    <div class="letter-card">
+      <div class="letter-content">
+        <div class="section-kicker">The final chapter · Just for you</div>
+        <h2>Happy birthday, mi amor. 💜</h2>
+
+        <p>
+          I wish I could be there with you today. I wish I could
+          celebrate with you in person, give you a hug, kiss you, see your
+          smile, and spend the whole day making sure you know how special
+          you are to me and doing whatever it is you wanna do.
+        </p>
+
+        <p>
+          Even though we're far apart, I hope you feel how much I love you and also all of your friends and family.
+          I hope this next year right before the big 30(!) brings you happiness, exciting
+          adventures, good music, delicious milk tea, 
+          and lots of little moments that make you smile.
+        </p>
+
+        <p>
+          I'm grateful that we met, even if it happened in the
+          most nerd way it could have actually happened. I wouldn't have guessed that
+          meeting my raid leader would lead to someone I love and care about
+          this much. I'm so happy that you are part of my life.
+        </p>
+
+        <p>
+          Thank you for being who you are. Thank you for sharing your time,
+          your laughter, your music, your games, and pieces of your
+          life with me. I hope I can keep making memories with you
+          for the rest of our lives.
+        </p>
+
+        <p>
+          No matter how many miles are between Florida and California,
+          you're the love of my life, And today, I hope
+          this little corner of the internet reminds you of that.
+        </p>
+
+        <p>
+          This website isn't much compared to what I wish I could
+          give you in person, but I made it for you, and every little
+          part of it is meant to make you smile. I know that I will see you soon.
+        </p>
+
+        <p class="letter-signature">
+          Happy birthday. I love you. ♥
+        </p>
+
+        <div class="reward-label">Quest reward</div>
+        <div class="item">
+          <div class="item-icon" aria-hidden="true">🏆</div>
+          <div class="item-body">
+            <div class="item-name">Coupon: One Free Argument Win</div>
+            <div class="item-line">Binds when picked up</div>
+            <div class="item-use">Use: Win any one argument, no questions asked.</div>
+            <div class="item-flavor">"Final decision. You can be right i guess..."</div>
+            <button class="button button-secondary coupon-redeem" type="button">Redeem</button>
+          </div>
+        </div>
+
+        <span class="final-heart" aria-hidden="true">♥</span>
+
+        <div>
+          <button class="button button-primary" type="button"
+            id="finalConfettiButton">
+            One last shower of love ✨
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="wow-overlay" id="wowOverlay" hidden>
+  <div class="wow-window" id="acceptWin" role="dialog" aria-modal="true" aria-labelledby="acceptGiver" hidden>
+    <div class="wow-titlebar"><span id="acceptGiver"></span><button class="wow-close" type="button" aria-label="Close">×</button></div>
+    <div class="wow-paper">
+      <h3 id="acceptTitle"></h3>
+      <p id="acceptText"></p>
+      <h4>Quest Objectives</h4>
+      <p id="acceptObjective"></p>
+    </div>
+    <div class="wow-footer">
+      <button class="wow-btn" type="button" id="acceptBtn">Accept</button>
+      <button class="wow-btn" type="button" id="declineBtn">Decline</button>
+    </div>
+  </div>
+  <div class="wow-window" id="logWin" role="dialog" aria-modal="true" aria-labelledby="logTitle" hidden>
+    <div class="wow-titlebar"><span id="logTitle">Quest Log</span><button class="wow-close" type="button" aria-label="Close">×</button></div>
+    <div class="wow-loglist" id="logList"></div>
+    <div class="wow-paper" id="logBody"></div>
+  </div>
+</div>
+<button class="log-fab" type="button" id="logFab" hidden>📖 Quest Log</button>
+
+<footer>
+  Made with <span class="footer-heart">♥</span> for my favorite person.
+  <br>
+  <span>For a cutie pie, no matter the distance.</span>
+</footer>
+
+<script>
+const questSections = ["story", "listen", "memories", "letter"];
+const completedQuests = new Set();
+const wrongAttempts = {};
+const STORAGE_KEY = "birthdayQuestsUnlocked";
+
+const questHints = {
+  story: "Hint: a certain troll and undead/orc. ⚔️",
+  listen: "Hint: it involves a guitar or a ukulele. 🎸",
+  memories: "Hint: we've only spent thousand of hours doing this. 🎮",
+  letter: "Hint: I don't think you need a hint. 🎂"
+};
+
+function saveProgress() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify([...completedQuests]));
+  } catch (error) {
+    // Storage can be unavailable (private mode); progress just won't persist.
+  }
+}
+
+function loadProgress() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+    return Array.isArray(saved)
+      ? saved.filter(quest => questSections.includes(quest))
+      : [];
+  } catch (error) {
+    return [];
+  }
+}
+
+function unlockQuest(quest) {
+  completedQuests.add(quest);
+
+  const section = document.getElementById(quest);
+  section.classList.add("visible");
+
+  const navLink = document.querySelector('[data-nav="' + quest + '"]');
+  if (navLink) {
+    navLink.classList.remove("locked");
+    navLink.textContent = navLink.textContent.replace(" 🔒", "");
+  }
+
+  const npc = document.querySelector('.npc[data-quest="' + quest + '"]');
+  if (npc) {
+    npc.classList.remove("accepted");
+    npc.classList.add("done");
+    npc.querySelector(".npc-mark").textContent = "✓";
+  }
+
+  const feedback = document.getElementById("feedback-" + quest);
+  feedback.textContent = "Correct! Your surprise is unlocked. ✨";
+  feedback.className = "quest-feedback success";
+
+  updateProgress();
+  saveProgress();
+  return section;
+}
+
+function checkAnswer(quest, correctAnswer) {
+  const select = document.getElementById("answer-" + quest);
+  const feedback = document.getElementById("feedback-" + quest);
+  const chosenAnswer = select.value;
+
+  if (!chosenAnswer) {
+    feedback.textContent = "Choose an answer first! 💜";
+    feedback.className = "quest-feedback error";
+    return;
+  }
+
+  // The final reward waits until the other three are done.
+  if (quest === "letter") {
+    const missing = questSections
+      .filter(q => q !== "letter" && !completedQuests.has(q));
+    if (missing.length > 0) {
+      feedback.textContent =
+        "Almost! Finish the other " + missing.length +
+        " quest" + (missing.length === 1 ? "" : "s") +
+        " first, then come back. 💜";
+      feedback.className = "quest-feedback error";
+      return;
+    }
+  }
+
+  if (chosenAnswer !== correctAnswer) {
+    wrongAttempts[quest] = (wrongAttempts[quest] || 0) + 1;
+    feedback.textContent = wrongAttempts[quest] >= 2
+      ? "Not quite! " + questHints[quest]
+      : "Not quite! Give it another try. 💫";
+    feedback.className = "quest-feedback error";
+    return;
+  }
+
+  const section = unlockQuest(quest);
+  closeWow();
+  createConfetti(24);
+
+  const banner = document.createElement("div");
+  banner.className = "quest-banner";
+  banner.textContent = "Quest Complete!";
+  document.body.appendChild(banner);
+  setTimeout(() => banner.remove(), 2600);
+
+  // Scroll to the newly unlocked section.
+  setTimeout(() => {
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }, 150);
+}
+
+function updateProgress() {
+  const completed = completedQuests.size;
+  const total = questSections.length;
+  const percentage = (completed / total) * 100;
+
+  document.getElementById("progressFill").style.width = percentage + "%";
+  document.getElementById("progressText").textContent =
+    completed + " of " + total + " unlocked";
+
+  const letterNpc = document.querySelector('.npc[data-quest="letter"]');
+  if (letterNpc) {
+    const pending = questSections.filter(q => q !== "letter" && !completedQuests.has(q));
+    letterNpc.classList.toggle("locked", pending.length > 0);
+  }
+
+  const note = document.getElementById("lockNote");
+
+  if (completed === total) {
+    note.textContent =
+      "You unlocked everything! I hope this made you smile. Happy birthday! 💜";
+  } else if (completed > 0) {
+    note.textContent =
+      "You're doing great! " + (total - completed) +
+      " more surprise" + (total - completed === 1 ? "" : "s") +
+      " to unlock. ✨";
+  }
+}
+
+function createConfetti(amount = 45) {
+  const symbols = ["♥", "✦", "✧", "♡", "✨", "💜", "🍓", "🧋", "🐈‍⬛", "🧋", "🐈‍⬛"];
+  const colors = ["#ffb366", "#c69aff", "#ff8fbd", "#e5cfff", "#fff4ff"];
+
+  for (let i = 0; i < amount; i++) {
+    const piece = document.createElement("span");
+    piece.className = "confetti-piece";
+    piece.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+
+    piece.style.left = Math.random() * 100 + "vw";
+    piece.style.color = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.fontSize = (12 + Math.random() * 17) + "px";
+    piece.style.setProperty(
+      "--fall-duration",
+      (2.2 + Math.random() * 2.2) + "s"
+    );
+
+    document.body.appendChild(piece);
+    piece.addEventListener("animationend", () => piece.remove());
+  }
+}
+
+document.getElementById("confettiButton").addEventListener("click", () => {
+  createConfetti(40);
+});
+
+document.getElementById("finalConfettiButton").addEventListener("click", () => {
+  createConfetti(60);
+});
+
+// Locked navigation should not jump to hidden content.
+document.querySelectorAll(".nav-links a.locked").forEach(link => {
+  link.addEventListener("click", event => {
+    event.preventDefault();
+
+    const note = document.getElementById("lockNote");
+    note.textContent = "Complete that little quest to unlock this surprise! 💜";
+
+    document.getElementById("quests").scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
+
+// Replace the scrapbook placeholder with a label only when
+// the associated photo fails to load.
+document.querySelectorAll(".photo-frame").forEach(frame => {
+  const image = frame.querySelector("img");
+  const placeholder = frame.querySelector(".photo-placeholder");
+
+  if (!image || !placeholder) return;
+
+  function updatePlaceholder() {
+    placeholder.style.display =
+      image.complete && image.naturalWidth > 0 ? "none" : "block";
+  }
+
+  image.addEventListener("load", updatePlaceholder);
+  image.addEventListener("error", updatePlaceholder);
+  updatePlaceholder();
+});
+
+// Quest givers open a WoW-style accept window; answering happens in the quest log.
+const GIVER_NAME = "Your Quest Giver"; // replace with your in-game name
+const acceptedQuests = new Set();
+let pendingQuest = null;
+
+const overlay = document.getElementById("wowOverlay");
+const acceptWin = document.getElementById("acceptWin");
+const logWin = document.getElementById("logWin");
+const logBody = document.getElementById("logBody");
+const logList = document.getElementById("logList");
+const logFab = document.getElementById("logFab");
+
+document.querySelectorAll(".quest-card").forEach(card => {
+  card.dataset.quest = card.querySelector("select").id.replace("answer-", "");
+});
+logBody.appendChild(document.querySelector(".quest-grid"));
+
+const cardFor = quest => document.querySelector('.quest-card[data-quest="' + quest + '"]');
+const questTitle = quest => cardFor(quest).querySelector("h3").textContent;
+
+function showWindow(win) {
+  overlay.hidden = false;
+  acceptWin.hidden = win !== acceptWin;
+  logWin.hidden = win !== logWin;
+}
+
+function closeWow() {
+  overlay.hidden = true;
+}
+
+function openAccept(quest) {
+  const card = cardFor(quest);
+  pendingQuest = quest;
+  document.getElementById("acceptGiver").textContent = GIVER_NAME;
+  document.getElementById("acceptTitle").textContent = questTitle(quest);
+  document.getElementById("acceptText").textContent =
+    card.querySelector("p").textContent.trim().replace(/\s+/g, " ");
+  document.getElementById("acceptObjective").textContent =
+    card.querySelector("label").textContent;
+  showWindow(acceptWin);
+}
+
+function openLog(quest) {
+  logList.innerHTML = "";
+  acceptedQuests.forEach(q => {
+    const item = document.createElement("button");
+    item.type = "button";
+    item.className = "wow-logitem" + (q === quest ? " active" : "");
+    item.textContent = (completedQuests.has(q) ? "✓ " : "") + questTitle(q);
+    item.addEventListener("click", () => openLog(q));
+    logList.appendChild(item);
+  });
+  document.querySelectorAll(".quest-card").forEach(card =>
+    card.classList.toggle("open", card.dataset.quest === quest));
+  showWindow(logWin);
+}
+
+document.getElementById("acceptBtn").addEventListener("click", () => {
+  const quest = pendingQuest;
+  acceptedQuests.add(quest);
+  const npc = document.querySelector('.npc[data-quest="' + quest + '"]');
+  npc.classList.add("accepted");
+  npc.querySelector(".npc-mark").textContent = "?";
+  logFab.hidden = false;
+  openLog(quest);
+});
+
+document.getElementById("declineBtn").addEventListener("click", closeWow);
+document.querySelectorAll(".wow-close").forEach(btn => btn.addEventListener("click", closeWow));
+overlay.addEventListener("click", event => {
+  if (event.target === overlay) closeWow();
+});
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeWow();
+});
+
+logFab.addEventListener("click", () => {
+  const active = [...acceptedQuests].find(q => !completedQuests.has(q));
+  openLog(active || [...acceptedQuests][0]);
+});
+
+document.querySelectorAll(".npc").forEach(npc => {
+  npc.addEventListener("click", () => {
+    const quest = npc.dataset.quest;
+    if (npc.classList.contains("locked")) {
+      document.getElementById("lockNote").textContent =
+        "Complete the other three quests first. 💜";
+      return;
+    }
+    if (completedQuests.has(quest)) return;
+    if (acceptedQuests.has(quest)) openLog(quest);
+    else openAccept(quest);
+  });
+});
+
+// Shuffle answer options so the right one isn't always near the top.
+document.querySelectorAll(".quest-card select").forEach(select => {
+  const options = Array.from(select.options).slice(1);
+  for (let i = options.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [options[i], options[j]] = [options[j], options[i]];
+  }
+  options.forEach(option => select.appendChild(option));
+});
+
+// Restore progress from a previous visit (no confetti, no scrolling).
+// Opening the page with ?reset at the end of the address clears saved progress.
+if (location.search.includes("reset")) {
+  try { localStorage.removeItem(STORAGE_KEY); } catch (error) {}
+}
+
+loadProgress().forEach(quest => unlockQuest(quest));
+
+// Redeeming a coupon.
+document.querySelectorAll(".coupon-redeem").forEach(button => {
+  button.addEventListener("click", () => {
+    button.textContent = "Redeemed! Message me to claim it 💜";
+    button.disabled = true;
+    createConfetti(25);
+  });
+});
+</script>
+</body>
+</html>
